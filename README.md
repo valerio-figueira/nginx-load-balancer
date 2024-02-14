@@ -9,9 +9,9 @@
 
 - This command will create a common network for containers communication:
 
-## DOCKER COMMAND
+### DOCKER COMMAND
 
-#### docker network create loadbalance_net
+- docker network create loadbalance_net
 
 
 
@@ -21,15 +21,15 @@
 
 ### COMMANDS
 
-#### docker build -t server .
+- docker build -t server .
 
-#### docker run -p 1010:5050 --name server_1 -d --network loadbalance_net server
+- docker run -p 1010:5050 --name server_1 -d --network loadbalance_net server
 
-#### docker run -p 2020:5050 --name server_2 -d --network loadbalance_net server
+- docker run -p 2020:5050 --name server_2 -d --network loadbalance_net server
 
-#### docker run -p 3030:5050 --name server_3 -d --network loadbalance_net server
+- docker run -p 3030:5050 --name server_3 -d --network loadbalance_net server
 
-#### docker run -p 4040:5050 --name server_4 -d --network loadbalance_net server
+- docker run -p 4040:5050 --name server_4 -d --network loadbalance_net server
 
 
 
@@ -40,5 +40,5 @@
 
 ### COMMANDS
 
-#### docker build -t nginx_load_balancer .
-#### docker run -p 3000:80 --name nginx_server -d --network loadbalance_net nginx_load_balancer
+- docker build -t nginx_load_balancer .
+- docker run -p 3000:80 --name nginx_server -d --network loadbalance_net nginx_load_balancer
