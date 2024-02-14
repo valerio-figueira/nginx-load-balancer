@@ -2,6 +2,8 @@
 
 - This nginx server will create a load balancing with Round Robin algorithm.
 
+![Nginx Server](./server/public/server_picture.png)
+
 
 ## CREATE DOCKER NETWORK
 
