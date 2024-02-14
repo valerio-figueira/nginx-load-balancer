@@ -3,22 +3,31 @@ class Server {
         this.port = port
         this.express = require('express')
         this.app = this.express()
+        this.http = require('http')
+        this.https = require('https')
         this.path = require('path')
         this.initializeMiddlewares()
         this.initializeRoutes()
     }
 
+
+
     start() {
-        this.app.listen(this.port, () => {
-            console.log('Server running on port: ' + this.port)
-        })
+        this.http.createServer(this.app)
+            .listen(this.port, () => {
+                console.log('Server running on port: ' + this.port)
+            })
     }
+
+
 
     initializeMiddlewares() {
         const publicPath = this.path.join(__dirname, 'public')
         this.app.use(this.express.static(publicPath))
         this.app.use(this.express.json())
     }
+
+
 
     initializeRoutes() {
         this.app.get('/', (req, res) => {
